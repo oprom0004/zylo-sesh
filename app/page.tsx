@@ -26,7 +26,7 @@ export default function HomePage() {
                 Featured Products
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Discover our most popular nicotine pouches, carefully crafted for the ultimate experience.
+                Discover our most popular <a href="https://zylopouch.com/">nicotine pouches</a>, carefully crafted for the ultimate experience.
               </p>
             </div>
             <ProductGrid featured={true} />
