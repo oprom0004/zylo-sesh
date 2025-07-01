@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom ZYLO Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-zylo-dark bg-white;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+@layer components {
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-zylo-teal hover:bg-zylo-teal-dark text-white font-semibold py-3 px-6 rounded-zylo transition-all duration-300 shadow-zylo hover:shadow-zylo-hover transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-zylo-gray text-zylo-teal border-2 border-zylo-teal font-semibold py-3 px-6 rounded-zylo transition-all duration-300;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-zylo-teal text-zylo-teal hover:bg-zylo-teal hover:text-white font-semibold py-3 px-6 rounded-zylo transition-all duration-300;
+  }
+
+  /* Card Styles */
+  .card-product {
+    @apply bg-white rounded-zylo shadow-lg hover:shadow-zylo-hover transition-all duration-300 overflow-hidden cursor-pointer;
+  }
+  
+  .card-product:hover {
+    @apply transform scale-105;
+  }
+
+  /* Navigation Styles */
+  .nav-link {
+    @apply text-zylo-dark hover:text-zylo-teal font-medium transition-colors duration-300 relative;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-zylo-teal transition-all duration-300;
+  }
+
+  /* Form Styles */
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-zylo focus:outline-none focus:ring-2 focus:ring-zylo-teal focus:border-transparent transition-all duration-300;
+  }
+  
+  .select-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-zylo focus:outline-none focus:ring-2 focus:ring-zylo-teal focus:border-transparent transition-all duration-300 appearance-none bg-white;
+  }
+
+  /* Modal Styles */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4;
+  }
+  
+  .modal-content {
+    @apply bg-white rounded-zylo max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl;
+  }
+
+  /* Loading Animation */
+  .loading-spinner {
+    @apply animate-spin rounded-full border-4 border-zylo-gray border-t-zylo-teal;
+  }
+}
+
+@layer utilities {
+  /* Custom utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .shadow-zylo-sm {
+    box-shadow: 0 2px 10px rgba(1, 134, 122, 0.1);
+  }
+  
+  .gradient-zylo {
+    background: linear-gradient(135deg, #01867A 0%, #02A692 100%);
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-300 hover:transform hover:-translate-y-1;
+  }
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-zylo-gray;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zylo-teal rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-zylo-teal-dark;
+}
+
+/* Selection Styles */
+::selection {
+  @apply bg-zylo-teal text-white;
+}
+
+/* Focus Styles */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-zylo-teal;
+}
